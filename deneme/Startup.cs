@@ -46,6 +46,7 @@ namespace deneme
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
+            app.UseForwardedHeaders();
 
             app.UseAuthorization();
 

@@ -37,3 +37,14 @@ C:\Users\Karani\Desktop\jenkis_deneme\deneme\obj\Release\net5.0\ref\deneme.dll
 C:\Users\Karani\Desktop\jenkis_deneme\deneme\obj\Release\net5.0\deneme.pdb
 C:\Users\Karani\Desktop\jenkis_deneme\deneme\obj\Release\net5.0\deneme.genruntimeconfig.cache
 C:\Users\Karani\Desktop\jenkis_deneme\deneme\obj\Release\net5.0\deneme.csproj.CopyComplete
+C:\Users\Karani\Desktop\publish\appsettings.Development.json
+C:\Users\Karani\Desktop\publish\appsettings.json
+C:\Users\Karani\Desktop\publish\deneme.exe
+C:\Users\Karani\Desktop\publish\deneme.deps.json
+C:\Users\Karani\Desktop\publish\deneme.runtimeconfig.json
+C:\Users\Karani\Desktop\publish\deneme.runtimeconfig.dev.json
+C:\Users\Karani\Desktop\publish\deneme.dll
+C:\Users\Karani\Desktop\publish\ref\deneme.dll
+C:\Users\Karani\Desktop\publish\deneme.pdb
+C:\Users\Karani\Desktop\publish\deneme.Views.dll
+C:\Users\Karani\Desktop\publish\deneme.Views.pdb
