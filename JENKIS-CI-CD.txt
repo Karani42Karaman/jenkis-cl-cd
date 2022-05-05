@@ -1,0 +1,57 @@
+
+
+#linux a create folder => sudo mkdir jenkinsPublishFolder
+#linux a folder permission give => sudo chown -R jenkins:root jenkinsPublishFolder/
+
+
+#BUİLD
+
+dotnet build ./deneme.sln -c Release  -o /home/ubuntu/jenkins-demo-app
+
+dotnet build ./deneme.sln -c Release  -o /home/ubuntu/jenkinsPublishFolder
+
+
+#PUBLİSH
+dotnet publish deneme.sln -c Release  -o /home/ubuntu/jenkinsPublishFolder
+
+#NGNİX CONFIGURATION 
+sudo nano /etc/nginx/sites-available/default
+
+server {
+         listen 80;
+         server_name   _;
+         location / {
+         proxy_pass  http://localhost:5000;
+         proxy_http_version 1.1;
+         proxy_set_header Upgrade $http_upgrade;
+         proxy_set_header Connection keep-alive;
+         proxy_set_header Host $host;
+         proxy_cache_bypass $http_upgrade;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         }
+}
+
+
+
+
+#SERVİCE CREATE 
+sudo nano /etc/systemd/system/service-name.service
+
+
+[Unit]
+Description=Jenkins Demo API
+ 
+[Service]
+WorkingDirectory= /home/ubuntu/jenkinsPublishFolder
+
+ExecStart=/usr/bin/dotnet /home/ubuntu/jenkinsPublishFolder/deneme.dll
+Restart=always
+RestartSec=10
+SyslogIdentifier=jenkins-demo-api
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
+
+
